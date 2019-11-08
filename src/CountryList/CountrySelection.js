@@ -50,7 +50,7 @@ const ItemView = params => {
  * @param {*} params
  */
 const SectionHeader = params => (
-  <View style={styles.sectionContainer}>
+  <View style={[styles.sectionContainer, params.sectionCustom]}>
     <Text style={[styles.sectionHeader, params.titleCustom]}>
       {params.title}
     </Text>
@@ -76,10 +76,11 @@ export default class CountrySelection extends React.Component {
    * Change search text action
    */
   onChangeSearchText = text => {
-    const filtered = countries.filter(
-      country => country.name.toLowerCase().indexOf(text.toLowerCase()) > -1
-    );
-    this.generateSectionData(filtered);
+    console.log("here", text);
+    // const filtered = countries.filter(
+    //   country => country.name.toLowerCase().indexOf(text.toLowerCase()) > -1
+    // );
+    // this.generateSectionData(filtered);
   };
 
   /**
@@ -130,7 +131,11 @@ export default class CountrySelection extends React.Component {
             />
           )}
           renderSectionHeader={({ section: { title } }) => (
-            <SectionHeader title={title} titleCustom={this.props.titleCustom} />
+            <SectionHeader
+              title={title}
+              titleCustom={this.props.titleCustom}
+              sectionCustom={this.props.sectionCustom}
+            />
           )}
           sections={sections}
           keyExtractor={(item, index) => item + index}
