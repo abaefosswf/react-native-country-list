@@ -117,6 +117,7 @@ export default class CountrySelection extends React.Component {
               enablesReturnKeyAutomatically
               clearButtonMode="while-editing"
               onChangeText={text => this.onChangeSearchText(text)}
+              placeholderTextColor={this.props.placeholderTextColor}
             />
           </View>
         </View>
