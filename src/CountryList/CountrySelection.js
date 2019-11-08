@@ -51,7 +51,9 @@ const ItemView = params => {
  */
 const SectionHeader = params => (
   <View style={styles.sectionContainer}>
-    <Text style={styles.sectionHeader}>{params.title}</Text>
+    <Text style={[styles.sectionHeader, params.titleCustom]}>
+      {params.title}
+    </Text>
   </View>
 );
 
@@ -128,7 +130,7 @@ export default class CountrySelection extends React.Component {
             />
           )}
           renderSectionHeader={({ section: { title } }) => (
-            <SectionHeader title={title} />
+            <SectionHeader title={title} titleCustom={this.props.titleCustom} />
           )}
           sections={sections}
           keyExtractor={(item, index) => item + index}
