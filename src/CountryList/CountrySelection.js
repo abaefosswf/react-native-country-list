@@ -66,7 +66,7 @@ export default class CountrySelection extends React.Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.generateSectionData(countries);
   }
 
