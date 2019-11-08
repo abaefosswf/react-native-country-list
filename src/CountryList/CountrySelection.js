@@ -112,9 +112,9 @@ export default class CountrySelection extends React.Component {
               style={styles.textInput}
               placeholder="Search"
               placeholderTextColor="#2d2926"
-              // enablesReturnKeyAutomatically
-              // clearButtonMode="while-editing"
-              // onChangeText={text => this.onChangeSearchText(text)}
+              enablesReturnKeyAutomatically
+              clearButtonMode="while-editing"
+              onChangeText={text => this.onChangeSearchText(text)}
             />
           </View>
         </View>
