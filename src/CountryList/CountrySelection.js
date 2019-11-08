@@ -76,11 +76,10 @@ export default class CountrySelection extends React.Component {
    * Change search text action
    */
   onChangeSearchText = text => {
-    console.log("here", text);
-    // const filtered = countries.filter(
-    //   country => country.name.toLowerCase().indexOf(text.toLowerCase()) > -1
-    // );
-    // this.generateSectionData(filtered);
+    const filtered = countries.filter(
+      country => country.name.toLowerCase().indexOf(text.toLowerCase()) > -1
+    );
+    this.generateSectionData(filtered);
   };
 
   /**
@@ -113,9 +112,9 @@ export default class CountrySelection extends React.Component {
               style={styles.textInput}
               placeholder="Search"
               placeholderTextColor="#2d2926"
-              enablesReturnKeyAutomatically
-              clearButtonMode="while-editing"
-              onChangeText={text => this.onChangeSearchText(text)}
+              // enablesReturnKeyAutomatically
+              // clearButtonMode="while-editing"
+              // onChangeText={text => this.onChangeSearchText(text)}
             />
           </View>
         </View>
