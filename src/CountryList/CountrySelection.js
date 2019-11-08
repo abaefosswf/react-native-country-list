@@ -105,11 +105,13 @@ export default class CountrySelection extends React.Component {
 
     return (
       <View style={styles.container}>
-        <View style={styles.searchContainer}>
+        <View
+          style={[styles.searchContainer, this.props.searchContainerCustom]}
+        >
           <View style={styles.searchView}>
             <Image source={searchIcon} style={styles.searchIcon} />
             <TextInput
-              style={styles.textInput}
+              style={[styles.textInput, this.props.textInputCustom]}
               placeholder="Search"
               placeholderTextColor="#2d2926"
               enablesReturnKeyAutomatically
